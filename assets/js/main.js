@@ -100,3 +100,51 @@ if(year){
     year.innerText = new Date().getFullYear();
 
 }
+
+// ==========================================
+// IMAGE PREVIEW GALLERY
+// ==========================================
+
+
+const galleryImages = document.querySelectorAll(".gallery-img");
+
+const previewBox = document.getElementById("imagePreview");
+
+const previewImage = document.getElementById("previewImage");
+
+const closePreview = document.querySelector(".close-preview");
+
+
+galleryImages.forEach(image => {
+
+
+    image.addEventListener("click", function(){
+
+
+        previewBox.style.display = "flex";
+
+        previewImage.src = this.src;
+
+
+    });
+
+
+});
+
+
+closePreview.onclick = function(){
+
+    previewBox.style.display="none";
+
+}
+
+
+previewBox.onclick=function(e){
+
+    if(e.target !== previewImage){
+
+        previewBox.style.display="none";
+
+    }
+
+}
