@@ -1,0 +1,832 @@
+/* ==========================================
+   GISA TOUR & TRAVEL
+   Main Stylesheet
+========================================== */
+
+:root {
+    --primary: #0A4E9B;
+    --secondary: #2E8B57;
+    --accent: #FFC107;
+    --white: #FFFFFF;
+    --dark: #1F2937;
+    --gray: #6B7280;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    color: var(--dark);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+/* ==========================================
+   NAVBAR
+========================================== */
+
+.custom-navbar {
+    padding: 18px 0;
+    background: rgba(255,255,255,.95);
+    backdrop-filter: blur(10px);
+    transition: .4s;
+    z-index: 999;
+}
+
+.custom-navbar.scrolled {
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+.navbar-brand img{
+    height:60px;
+}
+
+.nav-link {
+    color: #333;
+    font-weight: 600;
+    margin: 0 12px;
+    transition: .3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary);
+}
+
+.btn-warning{
+    background:var(--accent);
+    border:none;
+}
+
+.btn-warning:hover{
+    background:#ffca2c;
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+
+    background: linear-gradient(
+        120deg,
+        rgba(10,78,155,.95),
+        rgba(78,145,219,.55)
+    ),
+    url("../img/hero/hero-bg.png");
+
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+}
+
+.hero .container{
+    position:relative;
+    z-index:2;
+}
+
+.hero-tag{
+
+    display:inline-block;
+
+    background:rgba(255,255,255,.15);
+
+    padding:12px 24px;
+
+    border-radius:40px;
+
+    color:#fff;
+
+    margin-bottom:25px;
+
+    backdrop-filter:blur(8px);
+
+}
+
+.hero h1{
+
+    font-size:64px;
+
+    font-weight:800;
+
+    color:#fff;
+
+    line-height:1.2;
+
+}
+
+.hero h1 span{
+
+    color:var(--accent);
+
+}
+
+.hero p{
+
+    color:#fff;
+
+    font-size:22px;
+
+    line-height:38px;
+
+    max-width:620px;
+
+    margin-top:25px;
+
+}
+
+.hero .btn{
+
+    padding:15px 38px;
+
+    border-radius:50px;
+
+    margin-right:15px;
+
+    margin-top:20px;
+
+}
+
+/* ==========================================
+   ABOUT
+========================================== */
+
+.about{
+    padding:100px 0;
+    background:#fff;
+}
+
+.section-title{
+    display:inline-block;
+    color:var(--primary);
+    font-size:15px;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:15px;
+}
+
+.about h2{
+    font-size:48px;
+    font-weight:800;
+    margin-bottom:25px;
+    line-height:1.2;
+}
+
+.about p{
+    color:#666;
+    font-size:18px;
+    line-height:34px;
+}
+
+/* Logo About */
+.about-logo{
+    width:70%;              /* Perkecil logo */
+    display:block;
+    margin-left:-25px;      /* Geser ke kiri */
+    margin-right:auto;
+    border-radius:20px;
+    box-shadow:0 20px 50px rgba(0,0,0,.15);
+    transition:.4s;
+}
+
+.about-logo:hover{
+    transform:scale(1.03);
+}
+
+.about .row p{
+    margin-bottom:15px;
+    font-weight:500;
+}
+
+/* Responsive */
+@media (max-width:992px){
+
+    .about{
+        text-align:center;
+    }
+
+    .about-logo{
+        width:70%;
+        margin:0 auto 40px;
+    }
+
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.btn-primary{
+
+    background:var(--primary);
+
+    border:none;
+
+}
+
+.btn-primary:hover{
+
+    background:#084180;
+
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer{
+
+    background:#0d1b2a;
+
+    color:#fff;
+
+    padding:30px 0;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:991px){
+
+.hero{
+
+    text-align:center;
+
+    padding:120px 0 80px;
+
+}
+
+.hero h1{
+
+    font-size:48px;
+
+}
+
+.hero p{
+
+    font-size:18px;
+
+    line-height:32px;
+
+}
+
+.about{
+
+    text-align:center;
+
+}
+
+.about img{
+
+    margin-bottom:40px;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.hero h1{
+
+    font-size:38px;
+
+}
+
+.about h2{
+
+    font-size:34px;
+
+}
+
+.hero .btn{
+
+    width:100%;
+    margin-bottom:15px;
+
+}
+
+
+}
+
+/* ==========================================
+   SERVICES
+========================================== */
+
+.services{
+
+    padding:100px 0;
+
+    background:#f7fbff;
+
+}
+
+.services .section-title{
+
+    margin-bottom:10px;
+
+}
+
+.services h2{
+
+    font-size:46px;
+
+    font-weight:800;
+
+    margin-bottom:20px;
+
+}
+
+.service-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:45px 30px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    height:100%;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+
+}
+
+.service-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 25px 50px rgba(0,0,0,.12);
+
+}
+
+.service-card .icon{
+
+    width:90px;
+
+    height:90px;
+
+    background:rgba(10,78,155,.08);
+
+    color:var(--primary);
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:auto;
+
+    margin-bottom:25px;
+
+    font-size:40px;
+
+}
+
+.service-card h4{
+
+    margin-bottom:15px;
+
+    font-weight:700;
+
+}
+
+.service-card p{
+
+    color:#666;
+
+    line-height:28px;
+
+}
+
+/*==========================================
+DESTINATION
+==========================================*/
+
+.destination{
+    padding:120px 0;
+    background:#f8fbff;
+}
+
+.destination .section-title{
+    text-align:center;
+    margin-bottom:10px;
+}
+
+.destination h2{
+    text-align:center;
+    font-size:48px;
+    font-weight:800;
+    color:#1b2a4e;
+    margin-bottom:15px;
+}
+
+.destination .section-desc{
+    text-align:center;
+    color:#666;
+    font-size:18px;
+    margin-bottom:60px;
+}
+
+.destination-card{
+    border:none;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    transition:.4s;
+    height:100%;
+    background:#fff;
+}
+
+.destination-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 25px 45px rgba(0,0,0,.15);
+}
+
+.destination-card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.destination-card .card-body{
+    display:flex;
+    flex-direction:column;
+    padding:25px;
+}
+
+.destination-card h4{
+    font-weight:700;
+    margin-bottom:12px;
+    color:#183153;
+}
+
+.destination-card p{
+    color:#666;
+    line-height:28px;
+    flex:1;
+}
+
+.destination-card .btn{
+    align-self:flex-start;
+    border-radius:30px;
+    padding:10px 24px;
+    font-weight:600;
+}
+
+/*==================================
+WHY US
+==================================*/
+
+.why-us{
+
+    padding:100px 0;
+
+    background:#f8fbff;
+
+}
+
+.why-us h2{
+
+    font-size:48px;
+
+    font-weight:800;
+
+}
+
+.why-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:45px 30px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    height:100%;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.06);
+
+}
+
+.why-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 25px 45px rgba(0,0,0,.12);
+
+}
+
+.why-card i{
+
+    width:90px;
+
+    height:90px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:auto;
+
+    margin-bottom:25px;
+
+    border-radius:50%;
+
+    background:#0A4E9B;
+
+    color:white;
+
+    font-size:38px;
+
+}
+
+.why-card h4{
+
+    margin-bottom:15px;
+
+    font-weight:700;
+
+}
+
+.why-card p{
+
+    color:#666;
+
+    line-height:28px;
+
+}
+
+/*==================================
+STATISTICS
+==================================*/
+
+.statistics{
+
+    padding:100px 0;
+
+    background:linear-gradient(135deg,#0A4E9B,#1976D2);
+
+    color:#fff;
+
+}
+
+.stat-card{
+
+    padding:30px 20px;
+
+}
+
+.stat-card h2{
+
+    font-size:58px;
+
+    font-weight:800;
+
+    color:#FFD54F;
+
+}
+
+.stat-card p{
+
+    margin-top:10px;
+
+    font-size:18px;
+
+    font-weight:500;
+
+}
+
+/*==================================
+GALLERY
+==================================*/
+
+.gallery{
+
+    padding:100px 0;
+
+    background:#ffffff;
+
+}
+
+.gallery h2{
+
+    font-size:48px;
+
+    font-weight:800;
+
+}
+
+.gallery-item{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+}
+
+
+.gallery-item img{
+
+    width:100%;
+
+    height:280px;
+
+    object-fit:cover;
+
+    transition:.5s;
+
+}
+
+
+.gallery-item:hover img{
+
+    transform:scale(1.1);
+
+}
+
+
+.gallery-item:hover .gallery-overlay{
+
+    opacity:1;
+
+}
+
+.gallery-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(10,78,155,.65);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    transition:.4s;
+
+}
+
+
+.gallery-overlay h4{
+
+    color:white;
+
+    font-size:28px;
+
+    font-weight:700;
+
+}
+
+/*==================================
+CONTACT
+==================================*/
+
+.contact{
+
+padding:100px 0;
+
+background:white;
+
+}
+
+.contact h2{
+
+font-size:48px;
+
+font-weight:800;
+
+margin-bottom:15px;
+
+}
+
+.contact-info{
+
+display:flex;
+
+flex-direction:column;
+
+gap:25px;
+
+}
+
+.contact-item{
+
+display:flex;
+
+align-items:center;
+
+gap:20px;
+
+padding:20px;
+
+border-radius:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+.contact-item:hover{
+
+transform:translateX(10px);
+
+}
+
+.contact-item i{
+
+font-size:35px;
+
+color:#0A4E9B;
+
+}
+
+.contact-item h5{
+
+margin-bottom:5px;
+
+font-weight:700;
+
+}
+
+.contact-item a{
+
+text-decoration:none;
+
+color:#555;
+
+}
+
+.contact-box{
+
+background:linear-gradient(135deg,#0A4E9B,#1976D2);
+
+color:white;
+
+padding:50px;
+
+border-radius:25px;
+
+}
+
+.contact-box h4{
+
+font-size:34px;
+
+font-weight:700;
+
+}
+
+.contact-box .btn{
+
+padding:15px 35px;
+
+}
