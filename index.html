@@ -149,94 +149,164 @@
 
     </nav>
 
-    <!-- Hero -->
-    <section class="hero" id="hero">
+    <!-- ==========================
+     HERO
+=========================== -->
 
-        <div class="overlay"></div>
+<section class="hero" id="hero">
 
-        <div class="container">
+    <div class="overlay"></div>
 
-            <div class="row align-items-center min-vh-100">
+    <div class="container">
 
-                <div class="col-lg-6 text-white">
+        <div class="row align-items-center min-vh-100">
 
-                    <span class="hero-tag">
-                        🌍 One Trip, Thousand Memories
-                    </span>
+            <!-- ==========================
+                 HERO TEXT - KIRI
+            =========================== -->
 
-                    <h1>
-                        Jelajahi Indonesia bersama
-                        <span>Gisa Tour & Travel</span>
-                    </h1>
+            <div class="col-lg-6 text-white hero-text">
 
-                    <p>
-                        Nikmati perjalanan wisata yang aman,
-                        nyaman, dan penuh pengalaman tak terlupakan
-                        bersama tim profesional Gisa Tour & Travel.
-                    </p>
+                <span class="hero-tag">
+                    🌍 One Trip, Thousand Memories
+                </span>
 
-                    <div class="mt-5">
+                <h1>
+                    Jelajahi Indonesia bersama
+                    <span>Gisa Tour & Travel</span>
+                </h1>
 
-                        <a href="#services"
-                            class="btn btn-warning btn-lg rounded-pill">
+                <p>
+                    Nikmati perjalanan wisata yang aman,
+                    nyaman, dan penuh pengalaman tak terlupakan
+                    bersama tim profesional Gisa Tour & Travel.
+                </p>
 
-                            Explore Tour
+                <div class="mt-5">
 
-                        </a>
+                    <a href="#services"
+                       class="btn btn-warning btn-lg rounded-pill">
 
-                        <a href="https://wa.me/6288994383113?text=Halo%20Gisa%20Tour%20%26%20Travel,%20saya%20tertarik%20dengan%20paket%20wisata.%20Boleh%20minta%20informasinya?"
-                            target="_blank"
-                            class="btn btn-outline-light btn-lg rounded-pill">
+                        Explore Tour
 
-                                Hubungi Kami
-                        </a>
+                    </a>
+
+                    <a href="https://wa.me/6288994383113?text=Halo%20Gisa%20Tour%20%26%20Travel,%20saya%20tertarik%20dengan%20paket%20wisata.%20Boleh%20minta%20informasinya?"
+                       target="_blank"
+                       class="btn btn-outline-light btn-lg rounded-pill">
+
+                        Hubungi Kami
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================
+                 OPEN TRIP - KANAN
+            =========================== -->
+
+            <div class="col-lg-6 hero-opentrip">
+
+                <div class="opentrip-floating"
+                     id="openTripButton"
+                     role="button"
+                     tabindex="0">
+
+                    <!-- Badge OPEN TRIP -->
+
+                    <div class="opentrip-badge">
+
+                        <span class="opentrip-pulse"></span>
+
+                        OPEN TRIP
+
+                    </div>
+
+
+                    <!-- Card -->
+
+                    <div class="opentrip-card">
+
+                        <!-- Poster -->
+
+                        <div class="opentrip-image">
+
+                            <img
+                                src="assets/img/opentrip/open-trip-yogyakarta.jpg"
+                                alt="Open Trip Yogyakarta Adventure Goa Pindul">
+
+                        </div>
+
+
+                        <!-- Informasi -->
+
+                        <div class="opentrip-info">
+
+                            <span class="opentrip-label">
+                                OPEN TRIP TERBARU
+                            </span>
+
+                            <h3>
+                                Yogyakarta Adventure
+                            </h3>
+
+                            <p>
+                                Goa Pindul & Sekitarnya
+                            </p>
+
+                            <div class="opentrip-click">
+
+                                Lihat Poster
+
+                                <i class="bi bi-arrow-right-circle-fill"></i>
+
+                            </div>
+
+                        </div>
 
                     </div>
 
                 </div>
 
-                <div class="col-lg-6"></div>
-
             </div>
 
-        <!-- ==========================
-     OPEN TRIP POPUP
-=========================== -->
+        </div>
 
-<div class="opentrip-floating" id="openTripFloating">
-
-    <div class="opentrip-badge">
-        <span class="opentrip-pulse"></span>
-        OPEN TRIP
     </div>
 
-    <div class="opentrip-content"
-         id="openTripButton"
-         role="button"
-         tabindex="0">
+</section>
 
-        <div class="opentrip-image">
-            <img src="assets/img/opentrip/open-trip-yogyakarta.jpg"
-                 alt="Open Trip Yogyakarta Adventure Goa Pindul">
-        </div>
 
-        <div class="opentrip-info">
-            <span>YUK IKUT OPEN TRIP!</span>
-            <strong>Yogyakarta Adventure</strong>
-            <small>Goa Pindul & Sekitarnya</small>
+<!-- ==========================
+     OPEN TRIP POSTER MODAL
+=========================== -->
 
-            <div class="opentrip-click">
-                Klik untuk lihat poster
-                <i class="bi bi-arrow-right-circle-fill"></i>
-            </div>
-        </div>
+<div class="opentrip-modal" id="openTripModal">
+
+    <div class="opentrip-modal-backdrop"></div>
+
+    <div class="opentrip-modal-content">
+
+        <button
+            class="opentrip-modal-close"
+            id="closeOpenTrip"
+            aria-label="Tutup poster">
+
+            <i class="bi bi-x-lg"></i>
+
+        </button>
+
+        <img
+            src="assets/img/opentrip/open-trip-yogyakarta.jpg"
+            alt="Poster Open Trip Yogyakarta Adventure Goa Pindul"
+            class="opentrip-poster">
 
     </div>
 
 </div>
-        </div>
-
-    </section>
 
     <!-- About -->
     <section id="about" class="about py-5">
