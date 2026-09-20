@@ -276,3 +276,68 @@ document.addEventListener(
 
     }
 );
+
+// ==========================================
+// OPEN TRIP POSTER MODAL
+// ==========================================
+
+const openTripButton = document.getElementById("openTripButton");
+const openTripModal = document.getElementById("openTripModal");
+const closeOpenTrip = document.getElementById("closeOpenTrip");
+const openTripBackdrop = document.querySelector(".opentrip-modal-backdrop");
+
+
+// Buka modal ketika card Open Trip diklik
+if (openTripButton && openTripModal) {
+
+    openTripButton.addEventListener("click", function () {
+
+        openTripModal.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+
+    });
+
+}
+
+
+// Tombol X
+if (closeOpenTrip && openTripModal) {
+
+    closeOpenTrip.addEventListener("click", function () {
+
+        openTripModal.classList.remove("active");
+
+        document.body.style.overflow = "";
+
+    });
+
+}
+
+
+// Klik area gelap untuk menutup
+if (openTripBackdrop && openTripModal) {
+
+    openTripBackdrop.addEventListener("click", function () {
+
+        openTripModal.classList.remove("active");
+
+        document.body.style.overflow = "";
+
+    });
+
+}
+
+
+// Tekan tombol ESC untuk menutup
+document.addEventListener("keydown", function (event) {
+
+    if (event.key === "Escape" && openTripModal) {
+
+        openTripModal.classList.remove("active");
+
+        document.body.style.overflow = "";
+
+    }
+
+});
