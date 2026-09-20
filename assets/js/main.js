@@ -33,22 +33,27 @@ function startCounter() {
 
         const update = () => {
 
-            const target = +counter.getAttribute("data-target");
+            const target =
+                +counter.getAttribute("data-target");
 
-            const count = +counter.innerText;
+            const count =
+                +counter.innerText;
 
-            const increment = Math.ceil(target / speed);
+            const increment =
+                Math.ceil(target / speed);
 
 
             if (count < target) {
 
-                counter.innerText = count + increment;
+                counter.innerText =
+                    count + increment;
 
                 setTimeout(update, 30);
 
             } else {
 
-                counter.innerText = target + "+";
+                counter.innerText =
+                    target + "+";
 
             }
 
@@ -71,12 +76,14 @@ window.addEventListener(
 // Auto Year Footer
 // ===============================
 
-const year = document.getElementById("year");
+const year =
+    document.getElementById("year");
 
 
 if (year) {
 
-    year.innerText = new Date().getFullYear();
+    year.innerText =
+        new Date().getFullYear();
 
 }
 
@@ -117,36 +124,45 @@ galleryImages.forEach(image => {
 
 if (closePreview) {
 
-    closePreview.onclick = function () {
+    closePreview.addEventListener(
+        "click",
+        function () {
 
-        if (previewBox) {
+            if (previewBox) {
 
-            previewBox.style.display = "none";
+                previewBox.style.display = "none";
+
+            }
 
         }
-
-    };
+    );
 
 }
 
 
 if (previewBox) {
 
-    previewBox.onclick = function (e) {
+    previewBox.addEventListener(
+        "click",
+        function (event) {
 
-        if (e.target !== previewImage) {
+            if (
+                previewImage &&
+                event.target !== previewImage
+            ) {
 
-            previewBox.style.display = "none";
+                previewBox.style.display = "none";
+
+            }
 
         }
-
-    };
+    );
 
 }
 
 
 // ==========================================
-// OPEN TRIP POSTER
+// OPEN TRIP POSTER MODAL
 // ==========================================
 
 const openTripButton =
@@ -159,11 +175,13 @@ const closeOpenTrip =
     document.getElementById("closeOpenTrip");
 
 const openTripBackdrop =
-    document.querySelector(".opentrip-modal-backdrop");
+    document.querySelector(
+        ".opentrip-modal-backdrop"
+    );
 
 
 // ==========================================
-// BUKA POSTER OPEN TRIP
+// BUKA MODAL
 // ==========================================
 
 function openOpenTripModal() {
@@ -172,14 +190,13 @@ function openOpenTripModal() {
 
     openTripModal.classList.add("active");
 
-    // Mencegah halaman belakang ikut scroll
     document.body.style.overflow = "hidden";
 
 }
 
 
 // ==========================================
-// TUTUP POSTER OPEN TRIP
+// TUTUP MODAL
 // ==========================================
 
 function closeOpenTripModal() {
@@ -188,7 +205,6 @@ function closeOpenTripModal() {
 
     openTripModal.classList.remove("active");
 
-    // Mengembalikan scroll halaman
     document.body.style.overflow = "";
 
 }
@@ -206,7 +222,6 @@ if (openTripButton) {
     );
 
 
-    // Bisa dibuka menggunakan keyboard
     openTripButton.addEventListener(
         "keydown",
         function (event) {
@@ -229,7 +244,7 @@ if (openTripButton) {
 
 
 // ==========================================
-// TOMBOL X / CLOSE
+// TOMBOL CLOSE
 // ==========================================
 
 if (closeOpenTrip) {
@@ -243,7 +258,7 @@ if (closeOpenTrip) {
 
 
 // ==========================================
-// KLIK AREA GELAP
+// KLIK BACKGROUND
 // ==========================================
 
 if (openTripBackdrop) {
@@ -257,7 +272,7 @@ if (openTripBackdrop) {
 
 
 // ==========================================
-// TOMBOL ESC UNTUK MENUTUP
+// ESC
 // ==========================================
 
 document.addEventListener(
@@ -276,68 +291,3 @@ document.addEventListener(
 
     }
 );
-
-// ==========================================
-// OPEN TRIP POSTER MODAL
-// ==========================================
-
-const openTripButton = document.getElementById("openTripButton");
-const openTripModal = document.getElementById("openTripModal");
-const closeOpenTrip = document.getElementById("closeOpenTrip");
-const openTripBackdrop = document.querySelector(".opentrip-modal-backdrop");
-
-
-// Buka modal ketika card Open Trip diklik
-if (openTripButton && openTripModal) {
-
-    openTripButton.addEventListener("click", function () {
-
-        openTripModal.classList.add("active");
-
-        document.body.style.overflow = "hidden";
-
-    });
-
-}
-
-
-// Tombol X
-if (closeOpenTrip && openTripModal) {
-
-    closeOpenTrip.addEventListener("click", function () {
-
-        openTripModal.classList.remove("active");
-
-        document.body.style.overflow = "";
-
-    });
-
-}
-
-
-// Klik area gelap untuk menutup
-if (openTripBackdrop && openTripModal) {
-
-    openTripBackdrop.addEventListener("click", function () {
-
-        openTripModal.classList.remove("active");
-
-        document.body.style.overflow = "";
-
-    });
-
-}
-
-
-// Tekan tombol ESC untuk menutup
-document.addEventListener("keydown", function (event) {
-
-    if (event.key === "Escape" && openTripModal) {
-
-        openTripModal.classList.remove("active");
-
-        document.body.style.overflow = "";
-
-    }
-
-});
