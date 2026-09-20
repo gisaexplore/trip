@@ -210,10 +210,9 @@
 
                 <div class="col-lg-6 hero-opentrip">
 
-                    <div class="opentrip-floating"
-                        id="openTripButton"
-                        role="button"
-                        tabindex="0">
+                    <a href="#openTripPreview"
+                        class="opentrip-floating"
+                        aria-label="Lihat poster Open Trip Yogyakarta Adventure Goa Pindul">
 
                         <div class="opentrip-badge">
 
@@ -259,7 +258,7 @@
 
                         </div>
 
-                    </div>
+                    </a>
 
                 </div>
             </div>
@@ -270,34 +269,37 @@
 
 
 
-   <!-- ==========================
-     OPEN TRIP POSTER MODAL
-    =========================== -->
+  <!-- ==========================
+     OPEN TRIP PREVIEW
+        =========================== -->
 
-    <div class="opentrip-modal" id="openTripModal">
+        <div class="opentrip-modal" id="openTripPreview">
 
-        <div class="opentrip-modal-backdrop"></div>
+            <a href="#"
+            class="opentrip-modal-backdrop"
+            aria-label="Tutup poster">
+            </a>
 
-        <div class="opentrip-modal-content">
 
-            <button
-                type="button"
+            <div class="opentrip-modal-content">
+
+                <a href="#"
                 class="opentrip-modal-close"
-                id="closeOpenTrip"
                 aria-label="Tutup poster">
 
-                <i class="bi bi-x-lg"></i>
+                    <i class="bi bi-x-lg"></i>
 
-            </button>
+                </a>
 
-            <img
-                src="assets/img/opentrip/open-trip-yogyakarta.jpg"
-                alt="Poster Open Trip Yogyakarta Adventure Goa Pindul"
-                class="opentrip-poster">
+
+                <img
+                    src="assets/img/opentrip/open-trip-yogyakarta.jpg"
+                    alt="Poster Open Trip Yogyakarta Adventure Goa Pindul"
+                    class="opentrip-poster">
+
+            </div>
 
         </div>
-
-    </div>
 
     <!-- About -->
     <section id="about" class="about py-5">
