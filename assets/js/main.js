@@ -1,5 +1,5 @@
 // ===============================
-// Navbar Scroll Effect
+// NAVBAR SCROLL EFFECT
 // ===============================
 
 window.addEventListener("scroll", function () {
@@ -19,13 +19,12 @@ window.addEventListener("scroll", function () {
 
 
 // ===============================
-// Counter Animation
+// COUNTER ANIMATION
 // ===============================
 
 const counters = document.querySelectorAll(".counter");
 
 const speed = 40;
-
 
 function startCounter() {
 
@@ -65,7 +64,6 @@ function startCounter() {
 
 }
 
-
 window.addEventListener(
     "load",
     startCounter
@@ -73,12 +71,11 @@ window.addEventListener(
 
 
 // ===============================
-// Auto Year Footer
+// AUTO YEAR FOOTER
 // ===============================
 
 const year =
     document.getElementById("year");
-
 
 if (year) {
 
@@ -165,129 +162,104 @@ if (previewBox) {
 // OPEN TRIP POSTER MODAL
 // ==========================================
 
-const openTripButton =
-    document.getElementById("openTripButton");
+document.addEventListener("DOMContentLoaded", function () {
 
-const openTripModal =
-    document.getElementById("openTripModal");
+    const openTripButton =
+        document.getElementById("openTripButton");
 
-const closeOpenTrip =
-    document.getElementById("closeOpenTrip");
+    const openTripModal =
+        document.getElementById("openTripModal");
 
-const openTripBackdrop =
-    document.querySelector(
-        ".opentrip-modal-backdrop"
-    );
+    const closeOpenTrip =
+        document.getElementById("closeOpenTrip");
 
-
-// ==========================================
-// BUKA MODAL
-// ==========================================
-
-function openOpenTripModal() {
-
-    if (!openTripModal) return;
-
-    openTripModal.classList.add("active");
-
-    document.body.style.overflow = "hidden";
-
-}
+    const openTripBackdrop =
+        document.querySelector(".opentrip-modal-backdrop");
 
 
-// ==========================================
-// TUTUP MODAL
-// ==========================================
+    // ===============================
+    // BUKA MODAL
+    // ===============================
 
-function closeOpenTripModal() {
+    if (openTripButton && openTripModal) {
 
-    if (!openTripModal) return;
+        openTripButton.addEventListener(
+            "click",
+            function () {
 
-    openTripModal.classList.remove("active");
+                openTripModal.classList.add("active");
 
-    document.body.style.overflow = "";
+                document.body.style.overflow = "hidden";
 
-}
+            }
+        );
 
-
-// ==========================================
-// KLIK CARD OPEN TRIP
-// ==========================================
-
-if (openTripButton) {
-
-    openTripButton.addEventListener(
-        "click",
-        openOpenTripModal
-    );
+    }
 
 
-    openTripButton.addEventListener(
+    // ===============================
+    // TUTUP DENGAN TOMBOL X
+    // ===============================
+
+    if (closeOpenTrip && openTripModal) {
+
+        closeOpenTrip.addEventListener(
+            "click",
+            function (event) {
+
+                event.stopPropagation();
+
+                openTripModal.classList.remove("active");
+
+                document.body.style.overflow = "";
+
+            }
+        );
+
+    }
+
+
+    // ===============================
+    // TUTUP DENGAN BACKDROP
+    // ===============================
+
+    if (openTripBackdrop && openTripModal) {
+
+        openTripBackdrop.addEventListener(
+            "click",
+            function () {
+
+                openTripModal.classList.remove("active");
+
+                document.body.style.overflow = "";
+
+            }
+        );
+
+    }
+
+
+    // ===============================
+    // TUTUP DENGAN ESC
+    // ===============================
+
+    document.addEventListener(
         "keydown",
         function (event) {
 
             if (
-                event.key === "Enter" ||
-                event.key === " "
+                event.key === "Escape" &&
+                openTripModal &&
+                openTripModal.classList.contains("active")
             ) {
 
-                event.preventDefault();
+                openTripModal.classList.remove("active");
 
-                openOpenTripModal();
+                document.body.style.overflow = "";
 
             }
 
         }
     );
 
-}
-
-
-// ==========================================
-// TOMBOL CLOSE
-// ==========================================
-
-if (closeOpenTrip) {
-
-    closeOpenTrip.addEventListener(
-        "click",
-        closeOpenTripModal
-    );
-
-}
-
-
-// ==========================================
-// KLIK BACKGROUND
-// ==========================================
-
-if (openTripBackdrop) {
-
-    openTripBackdrop.addEventListener(
-        "click",
-        closeOpenTripModal
-    );
-
-}
-
-
-// ==========================================
-// ESC
-// ==========================================
-
-document.addEventListener(
-    "keydown",
-    function (event) {
-
-        if (
-            event.key === "Escape" &&
-            openTripModal &&
-            openTripModal.classList.contains("active")
-        ) {
-
-            closeOpenTripModal();
-
-        }
-
-    }
-);
+});
