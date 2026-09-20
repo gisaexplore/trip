@@ -906,3 +906,536 @@ IMAGE PREVIEW
     cursor:pointer;
 
 }
+
+/* ==========================================================
+   OPEN TRIP - HERO
+========================================================== */
+
+/* Posisi kolom Open Trip */
+.hero-opentrip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-left: 50px;
+    padding-right: 20px;
+
+    position: relative;
+}
+
+
+/* ==========================================================
+   CARD OPEN TRIP
+========================================================== */
+
+.opentrip-floating {
+    width: 300px;
+
+    cursor: pointer;
+
+    position: relative;
+
+    animation: opentripFloat 4s ease-in-out infinite;
+}
+
+
+/* ==========================================================
+   LABEL OPEN TRIP
+========================================================== */
+
+.opentrip-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 16px;
+
+    background: #ffc107;
+
+    color: #222;
+
+    border-radius: 12px 12px 0 0;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: .6px;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, .18);
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* Titik merah */
+
+.opentrip-pulse {
+    width: 8px;
+
+    height: 8px;
+
+    background: #e53935;
+
+    border-radius: 50%;
+
+    display: block;
+
+    flex-shrink: 0;
+
+    animation: opentripPulse 1.5s infinite;
+}
+
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+.opentrip-card {
+    width: 100%;
+
+    padding: 12px;
+
+    background: rgba(255, 255, 255, .97);
+
+    border-radius: 0 16px 16px 16px;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, .30);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+
+/* Hover */
+
+.opentrip-floating:hover .opentrip-card {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 25px 55px rgba(0, 0, 0, .38);
+}
+
+
+/* ==========================================================
+   POSTER
+========================================================== */
+
+.opentrip-image {
+    width: 120px;
+
+    height: 150px;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background: #eeeeee;
+
+    position: relative;
+}
+
+
+.opentrip-image img {
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform .35s ease;
+}
+
+
+.opentrip-floating:hover
+.opentrip-image img {
+    transform: scale(1.04);
+}
+
+
+/* ==========================================================
+   INFORMASI
+========================================================== */
+
+.opentrip-info {
+    flex: 1;
+
+    padding: 0;
+
+    text-align: left;
+}
+
+
+.opentrip-label {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #e2a900;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: .6px;
+
+    line-height: 1.3;
+}
+
+
+.opentrip-info h3 {
+    margin: 0 0 5px;
+
+    color: #155e9e;
+
+    font-size: 17px;
+
+    font-weight: 800;
+
+    line-height: 1.2;
+}
+
+
+.opentrip-info p {
+    margin: 0 0 14px;
+
+    color: #555;
+
+    font-size: 11px;
+
+    line-height: 1.4;
+}
+
+
+/* ==========================================================
+   LIHAT POSTER
+========================================================== */
+
+.opentrip-click {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    color: #155e9e;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+.opentrip-click i {
+    font-size: 15px;
+
+    transition: transform .2s ease;
+}
+
+
+.opentrip-floating:hover
+.opentrip-click i {
+    transform: translateX(4px);
+}
+
+
+/* ==========================================================
+   FLOATING ANIMATION
+========================================================== */
+
+@keyframes opentripFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+}
+
+
+/* ==========================================================
+   PULSE ANIMATION
+========================================================== */
+
+@keyframes opentripPulse {
+
+    0% {
+        box-shadow:
+            0 0 0 0 rgba(229, 57, 53, .7);
+    }
+
+    70% {
+        box-shadow:
+            0 0 0 7px rgba(229, 57, 53, 0);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 0 rgba(229, 57, 53, 0);
+    }
+
+}
+
+
+/* ==========================================================
+   MODAL POSTER
+========================================================== */
+
+.opentrip-modal {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(0, 0, 0, .88);
+
+    z-index: 99999;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity .3s ease,
+        visibility .3s ease;
+}
+
+
+.opentrip-modal.active {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* ==========================================================
+   BACKDROP
+========================================================== */
+
+.opentrip-modal-backdrop {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    cursor: pointer;
+}
+
+
+/* ==========================================================
+   POSTER BESAR
+========================================================== */
+
+.opentrip-modal-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 90vw;
+
+    max-height: 92vh;
+
+    transform: scale(.85);
+
+    transition: transform .3s ease;
+}
+
+
+.opentrip-modal.active
+.opentrip-modal-content {
+    transform: scale(1);
+}
+
+
+.opentrip-poster {
+    display: block;
+
+    max-width: 90vw;
+
+    max-height: 92vh;
+
+    width: auto;
+
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 20px 70px rgba(0, 0, 0, .6);
+}
+
+
+/* ==========================================================
+   TOMBOL CLOSE
+========================================================== */
+
+.opentrip-modal-close {
+    position: absolute;
+
+    top: -15px;
+
+    right: -15px;
+
+    width: 40px;
+
+    height: 40px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: #222;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    z-index: 5;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, .3);
+
+    transition:
+        .2s ease;
+}
+
+
+.opentrip-modal-close:hover {
+    background: #ffc107;
+
+    transform: rotate(90deg);
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 991px) {
+
+    .hero-opentrip {
+        padding-left: 0;
+
+        padding-right: 0;
+
+        margin-top: 30px;
+
+        justify-content: center;
+    }
+
+
+    .opentrip-floating {
+        width: 300px;
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 576px) {
+
+    .hero-opentrip {
+        width: 100%;
+
+        padding: 0 15px;
+
+        margin-top: 25px;
+    }
+
+
+    .opentrip-floating {
+        width: 100%;
+
+        max-width: 320px;
+    }
+
+
+    .opentrip-card {
+        padding: 10px;
+
+        gap: 12px;
+    }
+
+
+    .opentrip-image {
+        width: 100px;
+
+        height: 125px;
+    }
+
+
+    .opentrip-info h3 {
+        font-size: 16px;
+    }
+
+
+    .opentrip-info p {
+        font-size: 10px;
+
+        margin-bottom: 10px;
+    }
+
+
+    .opentrip-poster {
+        max-width: 94vw;
+
+        max-height: 85vh;
+    }
+
+
+    .opentrip-modal-close {
+        top: -10px;
+
+        right: -5px;
+
+        width: 36px;
+
+        height: 36px;
+    }
+
+}
